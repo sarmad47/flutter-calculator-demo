@@ -15,8 +15,7 @@ class Display extends StatelessWidget {
 	@override
 	Widget build(BuildContext context) {
 		
-		TextStyle style = Theme.of(context).textTheme.headline3
-			.copyWith(color: Colors.white, fontWeight: FontWeight.w200);
+		TextStyle style = Theme.of(context).textTheme.headline.copyWith(color: Colors.white, fontSize: 40, fontWeight: FontWeight.w400);
 
 		return Container(
 			padding: EdgeInsets.only(top: _margin, bottom: _margin),

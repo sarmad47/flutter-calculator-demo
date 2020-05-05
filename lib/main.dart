@@ -16,7 +16,8 @@ class CalculatorApp extends StatelessWidget {
 	Widget build(BuildContext context) {
 
 		return MaterialApp(
-			theme: ThemeData(primarySwatch: Colors.teal),
+			debugShowCheckedModeBanner: false,
+			theme: ThemeData.dark().copyWith(primaryColorDark: Colors.black26),
 			home: Calculator(),
 		);
 	}

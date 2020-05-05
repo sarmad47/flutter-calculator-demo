@@ -37,14 +37,14 @@ class CalculatorKey extends StatelessWidget {
 		switch (symbol.type) {
 
 			case KeyType.FUNCTION:
-				return Color.fromARGB(255, 96, 96, 96);
+				return Colors.deepOrange.shade300;
 
 			case KeyType.OPERATOR:
 				return Color.fromARGB(255, 32, 96, 128);
 
 			case KeyType.INTEGER:
 			default:
-				return Color.fromARGB(255, 128, 128, 128);
+				return Colors.white30;
 		}
 	}
 
@@ -54,12 +54,12 @@ class CalculatorKey extends StatelessWidget {
 	Widget build(BuildContext context) {
 
 		double size = MediaQuery.of(context).size.width / 4;
-		TextStyle style = Theme.of(context).textTheme.headline4.copyWith(color: Colors.white);
+		TextStyle style = Theme.of(context).textTheme.headline.copyWith(color: Colors.white);
 
 		return Container(
-			
-			width: (symbol == Keys.zero) ? (size * 2) : size,
-			padding: EdgeInsets.all(2),
+
+			width: (symbol == Keys.equals || symbol == Keys.add) ? (size * 2.5) : size * 1.25,
+			padding: EdgeInsets.all(4),
 			height: size,
 			child: RaisedButton(
 				shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),

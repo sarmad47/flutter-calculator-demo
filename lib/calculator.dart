@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_calculator_demo/display.dart';
 import 'package:flutter_calculator_demo/key-controller.dart';
@@ -35,8 +36,7 @@ class _CalculatorState extends State<Calculator> {
 
 	@override
 	Widget build(BuildContext context) {
-
-		Size screen = MediaQuery.of(context).size;
+		Size screen = (MediaQuery.of(context).size * 2);
 
 		double buttonSize = screen.width / 4;
 		double displayHeight = screen.height - (buttonSize * 5) - (buttonSize);
@@ -44,12 +44,15 @@ class _CalculatorState extends State<Calculator> {
 		return Scaffold(
 			backgroundColor: Color.fromARGB(196, 32, 64, 96),
 			body: Column(
-				
 				mainAxisAlignment: MainAxisAlignment.center,
 				children: <Widget>[
-
 					Display(value: _output, height: displayHeight),
-					KeyPad()
+					Row(
+						mainAxisAlignment: MainAxisAlignment.center,
+					  children: <Widget>[
+					    KeyPad(),
+					  ],
+					),
 				]
 			),
 		);
